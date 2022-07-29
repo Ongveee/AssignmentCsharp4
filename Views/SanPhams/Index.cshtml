@@ -1,0 +1,65 @@
+﻿@model IEnumerable<AssignmentCsharp4_hieuptph18134.Models.SanPham>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TenSanPham)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoLuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Anh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GhiChu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaDanhMucNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSanPham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Anh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GhiChu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaDanhMucNavigation.MaDanhMuc)
+            </td>
+            <td>
+                <a  class="btn btn-primary btn-tone m-r-5" asp-action="Edit" asp-route-id="@item.MaSanPham">Edit</a> |
+                <a class="btn btn-secondary btn-tone m-r-5" asp-action="Details" asp-route-id="@item.MaSanPham">Details</a> |
+                <a class="btn btn-success btn-tone m-r-5" asp-action="Delete" asp-route-id="@item.MaSanPham">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,98 @@
+﻿@model List<AssignmentCsharp4_hieuptph18134.Models.HoaDonChiTiet>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="cart-area section-space-y-axis-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                @*@if (Model != null && Model.Count() > 0)
+                {*@
+                    <form action="javascript:void(0)">
+                        <div class="table-content table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="product_remove">Xóa </th>
+                                        <th class="product-thumbnail">Ảnh</th>
+                                        <th class="cart-product-name">Sản phẩm</th>
+                                        <th class="product-price">Đơn giá</th>
+                                        <th class="product-quantity">Số lượng</th>
+                                        <th class="product-subtotal">Thành tiền</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null && Model.Count() > 0)
+                                    {
+
+
+                                        @foreach (var item in Model)
+                                        {
+
+                                            <tr>
+                                                <td class="product_remove">
+                                                    <a href="javascript:void(0)">
+                                                        <i class="pe-7s-close" title="Removecart" ></i>
+                                                    </a>
+                                                </td>
+                                                <td class="product-thumbnail">
+                                                    <a href="javascript:void(0)">
+                                                        <img src="~/assets/images/product/medium-size/@item.Anh" alt="">
+                                                    </a>
+                                                </td>
+                                                <td class="product-name"><a href="">@item.TenSanPham</a></td>
+                                                <td class="product-price"><span class="amount">@item.Gia</span></td>
+                                                <td class="quantity">
+                                                    <div class="cart-plus-minus">
+                                                        <input data-mahh="@item.MaSanPham" class="cartItem cart-plus-minus-box" value="@item.SoLuong" type="text">
+                                                    </div>
+                                                </td>
+                                                <td class="product-subtotal"><span class="amount">@item.TongTien</span></td>
+                                            </tr>
+
+                                        }
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="coupon-all">
+                                    <div class="coupon">
+                                        <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Coupon code" type="text">
+                                        <input class="button mt-xxs-30" name="apply_coupon" value="Apply coupon" type="submit">
+                                    </div>
+                                    <div class="coupon2">
+                                        <input class="button" name="update_cart" value="Update cart" type="submit">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 ml-auto">
+                                <div class="cart-page-total">
+                                    <h2>Tổng đơn hàng</h2>
+                                    <ul>
+                                        <li>Thành tiền <span>@Model.Sum(x=>x.TongTien)</span></li>
+
+                                    </ul>
+                                    <a href="javascript:void(0)">Thanh toán</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                @*}
+                else
+                {
+                    <p> Chưa có hành hóa trong giỏ hàng</p>
+                }*@
+
+            </div>
+        </div>
+    </div>
+</div>
+

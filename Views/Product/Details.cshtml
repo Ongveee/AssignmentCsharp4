@@ -1,0 +1,130 @@
+﻿@model AssignmentCsharp4_hieuptph18134.Models.SanPham
+
+@{
+    ViewData["Title"] = Model.MaSanPham;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Begin Main Content Area  -->
+<main class="main-content">
+    <div class="single-product-area section-space-top-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="single-product-img h-100">
+                        <div class="swiper-container single-product-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="~/assets/images/product/medium-size/@Model.Anh" class="single-img gallery-popup">
+                                        <img class="img-full" src="~/assets/images/product/medium-size/@Model.Anh" alt="@Model.TenSanPham">
+                                    </a>
+                                </div>
+
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="product-thumb-with-content row">
+                        <div class="col-12 order-lg-1 order-2 pt-10 pt-lg-0">
+                            <div class="single-product-content">
+                                <h2 class="title">@Model.TenSanPham</h2>
+                                <div class="price-box pb-1">
+                                    <span class="new-price text-danger">@Model.DonGia</span>
+
+                                </div>
+                                <div class="rating-box-wrap pb-7">
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li><i class="pe-7s-star"></i></li>
+                                            <li><i class="pe-7s-star"></i></li>
+                                            <li><i class="pe-7s-star"></i></li>
+                                            <li><i class="pe-7s-star"></i></li>
+                                            <li><i class="pe-7s-star"></i></li>
+                                        </ul>
+                                    </div>
+                                    <div class="review-status ps-4">
+                                        <a href="javascript:void(0)">( 1 Customer Review )</a>
+                                    </div>
+                                </div>
+                                <p class="short-desc mb-6">
+                                    @Model.GhiChu
+                                </p>
+                                
+                                    <form asp-controller="ShopingCart" asp-action="Addgiohang" asp-route-id="@Model.MaSanPham">                                     
+                                        <input type="submit" value="Add" class="btn btn-primary" />
+                                    </form>
+                                    
+                                <div class="product-category text-matterhorn pb-2">
+                                    <span class="title">Danh mục :</span>
+                                    <ul>
+                                        <li>
+                                            <a href="">@Model.MaDanhMuc</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-12 order-lg-2 order-1 pt-10 pt-lg-0">
+                            <div class="swiper-container single-product-thumbs">
+                                <div class="swiper-wrapper">
+                                    <a href="~/assets/images/product/medium-size/@Model.Anh" class="single-img gallery-popup">
+                                        <img class="img-full" src="~/assets/images/product/medium-size/@Model.Anh" alt="@Model.TenSanPham">
+                                    </a>
+                                    <a href="~/assets/images/product/medium-size/@Model.Anh" class="single-img gallery-popup">
+                                        <img class="img-full" src="~/assets/images/product/medium-size/@Model.Anh" alt="@Model.TenSanPham">
+                                    </a>
+                                    <a href="~/assets/images/product/medium-size/@Model.Anh" class="single-img gallery-popup">
+                                        <img class="img-full" src="~/assets/images/product/medium-size/@Model.Anh" alt="@Model.TenSanPham">
+                                    </a>
+                                    <a href="~/assets/images/product/medium-size/@Model.Anh" class="single-img gallery-popup">
+                                        <img class="img-full" src="~/assets/images/product/medium-size/@Model.Anh" alt="@Model.TenSanPham">
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<!-- Main Content Area End Here  -->
+@*@section Scripts{
+    <script>
+    $(document).ready(function(){
+    $(function(){
+    $(".add-to-cart").click(function()
+    var productid = $('#MaSanPham').val();
+    var soluong = $('#SoLuong').val();
+    $.ajax({
+    url:"api/cart/add",
+    type:'POST',
+    dataType:"JSON",
+    data:{
+    ProductID: productid,
+    amount: soluong
+    },
+    success: function(response){
+    loadHeaderCart();
+    location.reload();
+
+    },
+    error:function(error){
+    alert("Cập nhập Cart Error !"+ error.responseText);
+    }
+    });
+
+
+
+    )};
+
+    });
+
+    </script>
+    }*@

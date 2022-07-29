@@ -1,0 +1,38 @@
+﻿@model IEnumerable<AssignmentCsharp4_hieuptph18134.Models.HoaDonChiTiet> 
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Đơn hàng</h1>
+@if (Model != null)
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <tbody>
+                <tr>
+                    <th>Mã hóa đơn ct</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Gía</th>
+                    <th>Số lượng</th>
+                    <th>Size</th>
+                    <th>Color</th>
+                    <th>Tổng tiền</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <th>@item.MaHoaDonCt</th>
+                    <th>@item.MaSanPham</th>
+                    <th>@item.Gia</th>
+                    <th>@item.SoLuong</th>
+                    <th>@item.Size</th>
+                    <th>@item.Color</th>
+                    <th>@item.TongTien</th>
+                </tr>
+
+
+                }
+            </tbody>
+        </table>
+    </div>
+}
